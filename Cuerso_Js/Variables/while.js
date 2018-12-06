@@ -11,7 +11,7 @@ while (year != 1991) {
 
     if (year == 2000) {
       break;
-      //break corta la ejecucion de un bucle
+      //break corta la ejecucion de un buble
     }
 
   year--;

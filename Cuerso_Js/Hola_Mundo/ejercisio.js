@@ -7,6 +7,7 @@
 3. Mostrar datos por pantalla.
 4. Tener un botón que al darle click nos muestre los 
     datos acruales del formulario.
+5. Validación del formulario
 
 */
 
@@ -21,7 +22,24 @@ window.addEventListener('load', ()=>{
 
             var nombre = document.querySelector("#nombre").value;
             var apellido = document.querySelector("#apellido").value;
-            var edad = document.querySelector("#edad").value;
+            var edad = parseInt(document.querySelector("#edad").value);
+
+            if(nombre.trim() == null || nombre.trim().length == 0) {
+                alert("nombre no es valido");
+                return false;
+            }
+
+
+            if(apellido.trim() == null || apellido.trim().length == 0) {
+                alert("apellido no es valido");
+                return false;
+            }
+
+            if(edad == null || edad.length <= 0 || isNaN(edad) ) {
+            alert("edad no es valido");
+            return false;
+            }
+
 
             box_dashed.style.display = "block";
 

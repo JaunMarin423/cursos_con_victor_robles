@@ -27,14 +27,22 @@ window.addEventListener('load', ()=>{
 
             var datos_usuaruio = [nombre, apellido, edad];
 
+            var p_nombre = document.querySelector("#p_nombre span");
+            var p_apellido = document.querySelector("#p_apellido span");
+            var p_edad = document.querySelector("#p_edad span");
+
+            p_nombre.innerHTML = nombre;
+            p_apellido.innerHTML = apellido;
+            p_edad.innerHTML = edad;
+
+            /*
             var indice;
             for(indice in datos_usuaruio){
                 var parrafo = document.createElement("p");
                 parrafo.append(datos_usuaruio[indice]);
                 box_dashed.append(parrafo);
             }
-
-            
+            */     
     });
 
 });

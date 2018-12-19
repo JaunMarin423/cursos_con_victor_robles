@@ -22,7 +22,7 @@ fetch('https://reqres.in/api/users?page=2')
                 nombre.innerHTML = i + '. ' + user.first_name + " " + user.last_name;
 
                 div_usuarios.appendChild(nombre);
-                document.querySelector("#loading").style.display = 'none';
+                document.querySelector(".loading").style.display = 'none';
         });
         
     });

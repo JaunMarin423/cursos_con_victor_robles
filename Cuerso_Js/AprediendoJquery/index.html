@@ -10,15 +10,19 @@
         crossorigin="anonymous"></script>
     -->
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        console.log("jQuery y la web cagador...");
-        
-    });
-    </script>
+    <script src="js/selectores.js"></script>
+    <style>
+        .zebra{
+            border: 5px dashed black;
+        }
+    </style>
+
 </head>
 <body>
     <h1>Aprendiendo jQuery</h1>
-    <p>ejercisios jquery</p>
+    <p id="rojo" class="zebra">ejercisios jquery</p>
+    <p id="amarillo" class="sin_borde">Practicando con selectores</p>
+    <p id="verde" class="zebra">Quiero ser un parrafo verde</p>
+    <p class="sin_borde">Soy un parrafo blanco</p>
 </body>
 </html>

@@ -38,5 +38,12 @@ $(document).ready(function(){
     $('[title="Google"]').css('background', '#ccc');
     $('[title="Facebook"]').css('background', 'blue');
 
+    // Otros
+    //$('p, a').addClass('margen-superior');
+
+    var busqueda = $("#caja").find('.resaltado');
+    console.log(busqueda);
+    
+
 });
 // $ se da referencia a jQery despues de eseo selector posterior evento

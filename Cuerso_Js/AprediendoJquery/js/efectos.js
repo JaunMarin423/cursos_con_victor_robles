@@ -13,7 +13,11 @@ $(document).ready(function(){
     $("#ocultar").click(function () {
         $(this).hide();
         $("#mostrar").show();
-        caja.fadeTo('slow',0);
+
+        caja.slideUp('slow', function(){
+        console.log("Cartel ocultado");
+        });
+        
     });
 
     $("#todo").click(function(){

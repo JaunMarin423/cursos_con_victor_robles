@@ -26,13 +26,34 @@ $(document).ready(function(){
                         web: $('input[name="web"]').val()
                     };
                         
-                    $.post($(this).attr("action"), usuario, function(response){
+                /*  $.post($(this).attr("action"), usuario, function(response){
                         console.log(response);
                     }).done(function(){
                         alert("Funciono WEY!");
                     });
+                */
+                    $.ajax({
+                        type: 'POST',
+                        url: $(this).attr("action"),
+                        data: usuario,
+                        beforeSend: function(){
+                            console.log("Enviando Usuario...");
+                        },
+                        success: function (response) {
+                            console.log(response);
+                        },
+                        error: function(){
+                            console.log("A ocurrido un error");
+                            
+                        }, 
+                        timeout: 1000
+                        
+                        
+                    });
 
                     return false;
         });
+
+        
 
 });

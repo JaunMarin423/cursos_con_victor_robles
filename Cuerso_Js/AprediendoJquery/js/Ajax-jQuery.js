@@ -14,4 +14,25 @@ $(document).ready(function(){
             });
             
         });
-})
+        
+            
+            
+
+        $("#formulario").submit(function(e){
+            e.preventDefault();
+
+                    var usuario = {
+                        name: $('input[name="name"]').val(),
+                        web: $('input[name="web"]').val()
+                    };
+                        
+                    $.post($(this).attr("action"), usuario, function(response){
+                        console.log(response);
+                    }).done(function(){
+                        alert("Funciono WEY!");
+                    });
+
+                    return false;
+        });
+
+});

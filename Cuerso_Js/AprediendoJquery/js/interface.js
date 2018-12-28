@@ -46,4 +46,7 @@ $(document).ready(function(){
     // Datepicker
     $("#calendario").datepicker();
 
+    // Tabs
+    $("#petanas").tabs();
+
 });

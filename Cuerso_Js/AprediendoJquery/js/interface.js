@@ -38,4 +38,10 @@ $(document).ready(function(){
 
     $(document).tooltip();
 
+    // Dialog
+    $("#lanzar").click(function(){
+        $("#popup").dialog();
+    })
+    
+
 });

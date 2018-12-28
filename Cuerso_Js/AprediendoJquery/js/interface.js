@@ -33,4 +33,9 @@ $(document).ready(function(){
     $("#mostrar").click(function(){
         $(".caja-efectos").effect("explode");
     });
+
+    // Tooltip
+
+    $(document).tooltip();
+
 });

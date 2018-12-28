@@ -7,6 +7,15 @@ $(document).ready(function(){
     $(".elemento").resizable();
 
     // Seleccionar elementos
-    $(".lista-seleccionable").selectable();
+   // $(".lista-seleccionable").selectable();
+
+    // Ordenar elementos
+    // $(".lista-seleccionable").sortable();
+    $(".lista-seleccionable").sortable({
+        update: function(event, ui){
+            console.log("ah cambiado  la lista");
+            
+        }
+    });
     
 });

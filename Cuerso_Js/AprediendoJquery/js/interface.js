@@ -1,4 +1,12 @@
 $(document).ready(function(){
-    console.log("Todo listo");
+
+    // Mover elemento por la pagina
+    $('.elemento').draggable();
+
+    // Redimensionar
+    $(".elemento").resizable();
+
+    // Seleccionar elementos
+    $(".lista-seleccionable").selectable();
     
 });

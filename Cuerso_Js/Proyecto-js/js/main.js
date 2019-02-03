@@ -1,39 +1,42 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     // Slider
-        $('.galeria').bxSlider({
-            mode: 'fade',
-            captions: true,
-            slideWidth: 1200
-        });
+    $('.galeria').bxSlider({
+        mode: 'fade',
+        captions: true,
+        slideWidth: 1200
+    });
 
     // Posts
-    var posts=[
-        {
+    var posts = [
+            {
             title: 'Prueba de titulo 1',
             date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
-            content: 'prueba de contenidoc '
+            content: 'prueba de contenidoc'
         },
-        { title: 'Prueba de titulo 2',
+        {
+            title: 'Prueba de titulo 2',
             date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
             content: 'pkjasd'
         },
-        { title: 'Prueba de titulo 3',
+        {
+            title: 'Prueba de titulo 3',
             date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
             content: 'pkjasd'
         },
-        { title: 'Prueba de titulo 4',
+        {
+            title: 'Prueba de titulo 4',
             date: new Date(),
             content: 'pkjasd'
         },
         {
             title: 'Prueba de titulo 5',
             date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
-            content: 'prueba de contenido numero 5 '
+            content: 'prueba de contenido numero 5'
         },
     ];
     posts.forEach((item, index) => {
-        var post =`
+        var post = `
          <article class = "post">
             <h2>
                 ${item.title}
@@ -47,9 +50,21 @@ $(document).ready(function(){
             <a href = "#" class = "buttom-more"> Leer más </a> 
             </article >
             `;
-            
-            $("#posts").append(post);
+
+        $("#posts").append(post);
     });
 
+    // Selector de tema
+    var theme = $("#theme");
+
+    $("#to-green").click(function(){
+        theme.attr("href", "css/green.css")
+    });
+    $("#to-red").click(function () {
+        theme.attr("href", "css/red.css")
+    });
+    $("#to-blue").click(function () {
+        theme.attr("href", "css/blue.css")
+    });
 
 });

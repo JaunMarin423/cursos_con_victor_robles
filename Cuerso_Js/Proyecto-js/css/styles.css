@@ -212,4 +212,9 @@ footer {
 
 #acordeon{
     margin-top: 20px;
+    background: #235E3D;
+}
+#acordeon h3{
+    background: #235E3D;
+    color: white;
 }

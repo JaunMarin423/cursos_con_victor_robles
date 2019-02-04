@@ -1,40 +1,46 @@
 $(document).ready(function () {
 
+    
+
+    
     // Slider
+    if (window.location.href.indexOf('index') > -1) {
     $('.galeria').bxSlider({
         mode: 'fade',
         captions: true,
         slideWidth: 1200
     });
-
+    }
     // Posts
-    var posts = [
+    if (window.location.href.indexOf('index') > -1){
+        var posts = [
+                {
+                title: 'Prueba de titulo 1',
+                date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
+                content: 'prueba de contenidoc'
+            },
             {
-            title: 'Prueba de titulo 1',
-            date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
-            content: 'prueba de contenidoc'
-        },
-        {
-            title: 'Prueba de titulo 2',
-            date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
-            content: 'pkjasd'
-        },
-        {
-            title: 'Prueba de titulo 3',
-            date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
-            content: 'pkjasd'
-        },
-        {
-            title: 'Prueba de titulo 4',
-            date: new Date(),
-            content: 'pkjasd'
-        },
-        {
-            title: 'Prueba de titulo 5',
-            date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
-            content: 'prueba de contenido numero 5'
-        },
-    ];
+                title: 'Prueba de titulo 2',
+                date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
+                content: 'pkjasd'
+            },
+            {
+                title: 'Prueba de titulo 3',
+                date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
+                content: 'pkjasd'
+            },
+            {
+                title: 'Prueba de titulo 4',
+                date: new Date(),
+                content: 'pkjasd'
+            },
+            {
+                title: 'Prueba de titulo 5',
+                date: 'Publicado el día ' + moment().date() + ' de ' + moment().format("MMMM") + ' del ' + moment().format("YYYY"),
+                content: 'prueba de contenido numero 5'
+            },
+        ];
+
     posts.forEach((item, index) => {
         var post = `
          <article class = "post">
@@ -53,6 +59,7 @@ $(document).ready(function () {
 
         $("#posts").append(post);
     });
+}
     
     // Selector de tema
     
@@ -122,6 +129,11 @@ $(document).ready(function () {
         location.reload();
     });
 
+    }
+
+    // Acordeon
+    if (window.location.href.indexOf('about') > -1) {
+        $("#acordeon").accordion();
     }
 
 });

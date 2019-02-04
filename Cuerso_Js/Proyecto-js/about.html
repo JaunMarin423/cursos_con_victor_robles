@@ -13,12 +13,11 @@
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!--Slider-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <!-- Moment -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
     <!-- Mis Scripts-->
     <script type="text/javascript" src="js/main.js"></script>
     <!---->
@@ -49,20 +48,46 @@
             </nav>
         </header>
 
-        <!--Slider-->
-
-        <div id="slider">
-            <div class="galeria">
-                <div><img src="img/hojas.jpg" title="hojas"></div>
-                <div><img src="img/rojo.jpg" title="rojo"></div>
-                <div><img src="img/cielo.jpg" title="cielo"></div>
-            </div>
-        </div>
-
         <!--Contenido-->
         <section id="content">
-            <div id="posts">
-                <!-- Cargar posts desde json -->
+            <div id="box">
+                <!-- Cargar Acordeon -->
+                <h2>Sobre mi</h2>
+                <div id="acordeon">
+                    <h3>¿Quienes somos?</h3>
+                    <div>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's
+                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled it to make a
+                            type specimen book.1
+                        </p>
+                    </div>
+                    <h3>Nuestros servicios</h3>
+                    <div>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's
+                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled it to make a
+                            type specimen book.1
+                        </p>
+                    </div>
+                    <h3>Nuestros Clientes</h3>
+                    <div>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's
+                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled it to make a
+                            type specimen book.1
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <aside id="sidebar">
@@ -82,17 +107,17 @@
                         <label for="name">
                             Nombre
                         </label>
-                        <input type="text" name="name" id="form_name"/>
+                        <input type="text" name="name" id="form_name" />
                         <label for="email">
                             Correo
                         </label>
-                        <input type="text" name="email"/>
+                        <input type="text" name="email" />
                         <label for="password">
                             contraseñas
                         </label>
-                        <input type="password" name="password"/>
+                        <input type="password" name="password" />
 
-                        <input type="submit" value="Entrar" /> 
+                        <input type="submit" value="Entrar" />
                     </form>
                 </div>
 

@@ -53,18 +53,43 @@ $(document).ready(function () {
 
         $("#posts").append(post);
     });
-
+    
     // Selector de tema
-    var theme = $("#theme");
+    
+        var theme = $("#theme");
+        
+        $("#to-green").click(function(){
+            asignarColoryCambiar('green');
+        });
+        $("#to-red").click(function () {
+            asignarColoryCambiar('red');
+        });
+        $("#to-blue").click(function () {
+            asignarColoryCambiar('blue');
+        });
+ 
+        //guardar el localStorage
 
-    $("#to-green").click(function(){
-        theme.attr("href", "css/green.css")
-    });
-    $("#to-red").click(function () {
-        theme.attr("href", "css/red.css")
-    });
-    $("#to-blue").click(function () {
-        theme.attr("href", "css/blue.css")
-    });
+        var colorGuardado = localStorage.getItem("theme");
+        if(colorGuardado != null){
+            switch(colorGuardado) {
+                case 'green':
+                asignarColoryCambiar('green');
+                break;
+                case 'red':
+                asignarColoryCambiar('red');
+                break;
+                case 'blue':
+                asignarColoryCambiar('blue');
+                break;
+            }
+    
+        }
+        //Cambia el color y asigna el valor en el localStorage
+        function asignarColoryCambiar(color){
+            localStorage.setItem("theme",color);
+            theme.attr("href","css/"+color+".css")
+        }
+
 
 });

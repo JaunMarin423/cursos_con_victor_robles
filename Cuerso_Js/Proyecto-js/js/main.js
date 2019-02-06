@@ -170,7 +170,9 @@ $(document).ready(function() {
         dateFormat: 'dd-mm-yy'
     });
     $.validate({
-      lang: "es"
+      lang: "es",
+      errorMessagePosition: 'top',
+      scrollTopOnError: true
     });
   }
 });

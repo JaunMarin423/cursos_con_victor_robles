@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
     <script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
+    <!--Plugin validación-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
     <!-- Mis Scripts-->
     <script type="text/javascript" src="js/main.js"></script>
     <!---->
@@ -51,43 +54,33 @@
         <!--Contenido-->
         <section id="content">
             <div id="box">
-                <!-- Cargar Acordeon -->
-                <h2>Sobre mi</h2>
-                <div id="acordeon">
-                    <h3>¿Quienes somos?</h3>
-                    <div>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the industry's
-                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                            scrambled it to make a
-                            type specimen book.1
-                        </p>
-                    </div>
-                    <h3>Nuestros servicios</h3>
-                    <div>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the industry's
-                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                            scrambled it to make a
-                            type specimen book.1
-                        </p>
-                    </div>
-                    <h3>Nuestros Clientes</h3>
-                    <div>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the industry's
-                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                            scrambled it to make a
-                            type specimen book.1
-                        </p>
-                    </div>
-                </div>
+                <h2>Contacto</h2>
+
+                <form id="form_contat" action="" method="POST">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" data-validation="alphanumeric" />
+
+                    <label for="sirname">Apellidos</label>
+                    <input type="text" name="surname" data-validation="alphanumeric" />
+
+                    <label for="email">Email</label>
+                    <input type="text" name="email" data-validation="email" />
+
+                    <label for="sex">Sexo</label>
+                    <select name="sex" data-validation="required">
+                        <option value="men">Hombre</option>
+                        <option value="woman">Mujer</option>
+                    </select>
+
+                    <label for="date">Fecha de nacimiento</label>
+                    <input type="text" name="date" data-validation="date" data-validation-format="dd/mm/yyyy" />
+
+                    <label for="yers">Edad</label>
+                    <input type="number" name="yers" data-validation="number" />
+
+                    <input type="submit" value="Enviar" />
+                </form>
+
             </div>
 
             <aside id="sidebar">

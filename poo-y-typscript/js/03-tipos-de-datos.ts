@@ -1,5 +1,7 @@
+type letrasonumeros = string | number;
+
 // String
-let cadena: string | number = "https://www.facebook.com/Manyjuan";
+let cadena: letrasonumeros | number = "https://www.facebook.com/Manyjuan";
 
 cadena = 12;
 

@@ -1,5 +1,4 @@
 // Interface
-
 interface CamisetaBase{
   setColor(color);
   getColor();
@@ -7,8 +6,8 @@ interface CamisetaBase{
 
 // Clase ( modelo del objeto)
  class Camiseta implements CamisetaBase{
-  // Propiedades ( caracteristicas del obgeto
 
+  // Propiedades ( caracteristicas del obgeto
   private color: string;
   public modelo: string;
   public marca: string;
@@ -33,9 +32,27 @@ interface CamisetaBase{
 
 }
 
-var camiseta = new Camiseta("sfsdf", "asdfas", "asdfas","asdfas", 12);
+// Clase hija
+class Sudadera extends Camiseta{
+  public capucha: boolean;
 
+  setCapucha(capucha: boolean){
+    this.capucha = capucha;
+  }
+  
+  getCapucha(): boolean{
+    return this.capucha;
+  }
+}
+
+var camiseta = new Camiseta("sfsdf", "asdfas", "asdfas","asdfas", 12);
 console.log(camiseta);
+
+var sudadera_nike = new Sudadera("Azules", "frutas", "cortos","sochimilco", 0);
+sudadera_nike.setCapucha(true);
+sudadera_nike.setColor("Gris");
+console.log(sudadera_nike);
+
 
 
 /*

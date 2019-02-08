@@ -1,3 +1,4 @@
+// Interface
 // Clase ( modelo del objeto)
 var Camiseta = /** @class */ (function () {
     // Método (Funciones o acciones del objeto)
@@ -16,6 +17,8 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
+var camiseta = new Camiseta("sfsdf", "asdfas", "asdfas", "asdfas", 12);
+console.log(camiseta);
 /*
 var camiseta = new Camiseta("rojo","larga","Nike","L",14);
 

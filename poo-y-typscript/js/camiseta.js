@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 // Clase ( modelo del objeto)
 var Camiseta = /** @class */ (function () {
     // Método (Funciones o acciones del objeto)
@@ -16,11 +18,18 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-var camiseta = new Camiseta("rojo", "larga", "Nike", "L", 14);
+exports.Camiseta = Camiseta;
+/*
+var camiseta = new Camiseta("rojo","larga","Nike","L",14);
+
+
+
 var payera = new Camiseta("rojo", "larga", "nike", "L", 14);
+
 payera.setColor("Azul");
 payera.modelo = "payera";
 payera.marca = "cualquiera";
 payera.talla = "L";
 payera.precio = 10;
-console.log(camiseta);
+
+console.log(camiseta);*/

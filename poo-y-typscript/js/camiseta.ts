@@ -1,5 +1,5 @@
 // Clase ( modelo del objeto)
-class Camiseta {
+ export class Camiseta {
   // Propiedades ( caracteristicas del obgeto
 
   private color: string;
@@ -25,7 +25,7 @@ class Camiseta {
   }
 }
 
-
+/*
 var camiseta = new Camiseta("rojo","larga","Nike","L",14);
 
 
@@ -38,5 +38,5 @@ payera.marca = "cualquiera";
 payera.talla = "L";
 payera.precio = 10;
 
-console.log(camiseta);
+console.log(camiseta);*/
 

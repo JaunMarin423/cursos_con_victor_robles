@@ -9,7 +9,13 @@ class Camiseta {
   public precio: number;
 
   // Método (Funciones o acciones del objeto)
-
+    constructor(color, modelo, marca, talla, precio){
+        this.color = color;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.talla = talla;
+        this.precio = precio;
+    }
   public setColor(color){
     this.color = color;
   }
@@ -20,15 +26,11 @@ class Camiseta {
 }
 
 
-var camiseta = new Camiseta();
+var camiseta = new Camiseta("rojo","larga","Nike","L",14);
 
-camiseta.setColor("Rojo");
-camiseta.modelo = "Cualquiera";
-camiseta.marca = "nike";
-camiseta.talla = "L";
-camiseta.precio = 1500000;
 
-var payera = new Camiseta();
+
+var payera = new Camiseta("rojo", "larga", "nike", "L", 14);
 
 payera.setColor("Azul");
 payera.modelo = "payera";
@@ -36,5 +38,5 @@ payera.marca = "cualquiera";
 payera.talla = "L";
 payera.precio = 10;
 
-console.log(camiseta.getColor());
+console.log(camiseta);
 

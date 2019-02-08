@@ -1,5 +1,5 @@
 // Clase ( modelo del objeto)
- export class Camiseta {
+ class Camiseta {
   // Propiedades ( caracteristicas del obgeto
 
   private color: string;

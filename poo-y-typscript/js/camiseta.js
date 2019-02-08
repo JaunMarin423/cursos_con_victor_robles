@@ -1,5 +1,3 @@
-"use strict";
-exports.__esModule = true;
 // Clase ( modelo del objeto)
 var Camiseta = /** @class */ (function () {
     // Método (Funciones o acciones del objeto)
@@ -18,7 +16,6 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-exports.Camiseta = Camiseta;
 /*
 var camiseta = new Camiseta("rojo","larga","Nike","L",14);
 

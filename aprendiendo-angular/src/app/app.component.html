@@ -1,11 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div [ngStyle]="{
+  'background': config.fondo,
+  'padding': '20px',
+  'border': '5px solid black',
+  'border-color': config.color
+}">
   <h1>
-    Bienvenido al {{ title }}!
+    Bienvenido al {{ title }}
   </h1>
-  <p>Vamos a aprender angular</p>
+<p>{{ descripcion }}</p>
 
-  <videojuego></videojuego>
+<button (click)="ocultarVideoJuegos(false)" *ngIf="mostrar_videojuegos" >Ocultar</button>
+<button (click)="ocultarVideoJuegos(true)" *ngIf="!mostrar_videojuegos" >Mostrar</button>
+
+<videojuego *ngIf="mostrar_videojuegos"></videojuego>
   <sapatos></sapatos>
   <cursos></cursos>
 

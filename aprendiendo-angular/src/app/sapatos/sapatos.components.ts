@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Zapatilla } from '../models/zapatillas';
 
 @Component({
     selector: 'sapatos',
     templateUrl: './sapatos.component.html'
 })
 
-export class SapatosComponent {
+export class SapatosComponent implements OnInit {
     public titulo: string ="Sapatos cualquiera";
+    public zapatillas: Array<Zaparilla>;
+    
+    constructor(){
+        this.zapatillas = [
+            new Zapatilla('Nike classic', 'Nike', 'Blanco', 80, true),
+            new Zapatilla('Rebook classic', 'Rebook', 'violeta', 180, true),
+            new Zapatilla('Adidas classic', 'adidas', 'verde', 15, false)
+        ];
+    }
 
+    ngOnInit(){
+        console.log(this.zapatillas);
+        
+    }
 }

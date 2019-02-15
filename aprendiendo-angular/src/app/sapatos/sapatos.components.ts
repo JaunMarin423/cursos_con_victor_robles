@@ -12,9 +12,10 @@ export class SapatosComponent implements OnInit {
     
     constructor(){
         this.zapatillas = [
-            new Zapatilla('Nike classic', 'Nike', 'Blanco', 80, true),
+            new Zapatilla('Nike classic', 'Nike', 'Blanco', 40, true),
             new Zapatilla('Rebook classic', 'Rebook', 'violeta', 180, true),
-            new Zapatilla('Adidas classic', 'adidas', 'verde', 15, false)
+            new Zapatilla('Adidas classic', 'adidas', 'verde', 60, false),
+            new Zapatilla('Adidas Zebra', 'adidas', 'verde', 190, false)
         ];
     }
 

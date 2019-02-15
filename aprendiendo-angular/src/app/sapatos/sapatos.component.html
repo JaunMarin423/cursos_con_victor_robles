@@ -1,6 +1,11 @@
 <h2>{{titulo}}</h2>
 
 <ul>
-    <li *ngFor="let sapatos of zapatillas">
-        {{sapatos.nombre}} - <strong>{{sapatos.precio}}</strong></li>
+  <li *ngFor="let sapatos of zapatillas">
+    {{sapatos.nombre}} - <strong>{{sapatos.precio}}$</strong>
+
+    <span *ngIf="sapatos.precio < 80"
+        [style.background]="sapatos.precio < 80 ? 'green' : 'transparent' " [style.color]="sapatos.precio < 80 ? 'white' : 'black'">¡EN OFERTA!</span>
+
+  </li>
 </ul>

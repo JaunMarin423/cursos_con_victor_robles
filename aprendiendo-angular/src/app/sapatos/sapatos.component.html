@@ -17,3 +17,21 @@
     </div>
   </li>
 </ul>
+
+
+<p>El Color del la mayoria de nuestras ZAparillas es:</p>
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'yellow'">
+      El color predominante e el <span [ngStyle]="{'background': color}">Amarillo.</span>
+  </li>
+   <li *ngSwitchCase="'red'">
+      El color predominante e el <span [ngStyle]="{'background': color}">Rojo.</span>
+  </li>
+    <li *ngSwitchCase="'blue'">
+      El color predominante e el <span [ngStyle]="{'background': color}">Azul.</span>
+    </li>
+  <li *ngSwitchCase="'orange'">
+    El color predominante e el <span [ngStyle]="{'background': color}">Naranja.</span>
+  </li>
+
+</ul>

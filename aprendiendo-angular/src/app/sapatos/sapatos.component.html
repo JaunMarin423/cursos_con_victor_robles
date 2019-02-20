@@ -28,6 +28,7 @@
 
 
 <p>El Color del la mayoria de nuestras ZAparillas es:</p>
+<input type="text" [(ngModel)]="color"/>
 <ul [ngSwitch]="color">
   <li *ngSwitchCase="'yellow'">
       El color predominante e el <span [ngStyle]="{'background': color}">Amarillo.</span>

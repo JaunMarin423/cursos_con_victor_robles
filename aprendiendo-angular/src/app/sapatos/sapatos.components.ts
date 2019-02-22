@@ -49,4 +49,9 @@ export class SapatosComponent implements OnInit {
     addMarca(){
         this.marcas.push(this.mi_marca);
     }
+
+    borrarMarca(index){
+        //delete this.marcas[index];
+        this.marcas.splice(index, 1);
+    }
 }

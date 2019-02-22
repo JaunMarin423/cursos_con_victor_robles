@@ -2,7 +2,7 @@
 
 <p>Añadir Marca</p>
 <p>
-<input type="text" [(ngModel)]="mi_marca" />
+<input type="text" [(ngModel)]="mi_marca" (keyup.enter)="mostrarPalabra()" />
 <button (click)="getMarca()">Mostrar Marca</button>
 <button (click)="addMarca()">Añadir Marca</button>
 </p>

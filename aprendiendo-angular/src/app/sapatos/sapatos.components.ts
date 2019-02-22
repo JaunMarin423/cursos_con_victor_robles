@@ -54,4 +54,12 @@ export class SapatosComponent implements OnInit {
         //delete this.marcas[index];
         this.marcas.splice(index, 1);
     }
+
+    onBlur(){
+        console.log("Has Salido por aquí");
+        
+    }
+    mostrarPalabra(){
+        alert(this.mi_marca);
+    }
 }

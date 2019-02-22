@@ -8,7 +8,7 @@ import { Zapatilla } from '../models/zapatillas';
 
 export class SapatosComponent implements OnInit {
     public titulo: string ="Sapatos cualquiera";
-    public zapatillas: Array<Zaparilla>;
+    public zapatillas: Array<Zapatilla>;
     public marcas: String[];
     public color: string;
     public mi_marca: string;

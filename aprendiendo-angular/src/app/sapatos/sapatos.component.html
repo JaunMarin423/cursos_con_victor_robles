@@ -19,13 +19,26 @@
 <p>Los sapatos que tenemos disponibles son las siguientes</p>
 <ul>
   <li *ngFor="let sapatos of zapatillas">
-    <div *ngIf="sapatos.stock">
-      {{sapatos.nombre}} - <strong>{{sapatos.precio}}$</strong>
 
-      <span *ngIf="sapatos.precio < 80" [style.background]="sapatos.precio < 80 ? 'green' : 'transparent' "
-        [style.color]="sapatos.precio < 80 ? 'white' : 'black'">
-        ¡EN OFERTA!</span>
-    </div>
+    <span [ngStyle]="{
+      'text-decpration' : !sapatos.stock ? 'line-through' : 'none'
+    }">
+    {{sapatos.nombre}} - 
+
+    <strong [class.altoPrecio]="sapatos.precio >= 80"
+      [ngClass]="{
+        'fondoRojo': sapatos.precio > 100,
+        'subrayado': sapatos.marca == 'Nike'
+      }"
+      >
+      {{sapatos.precio}}$
+      </strong>
+    </span>
+
+    <span *ngIf="sapatos.precio < 80"
+    [style.background]="sapatos.precio < 80 ? 'green' : 'transparent'"
+    [style.color]="sapatos.precio < 80 ? 'white' : 'black'"
+    >EN OFERTA!</span>
   </li>
 </ul>
 

@@ -11,14 +11,15 @@
   <p>{{ descripcion }}</p>
 
   <nav>
-    <a [routerLink]="['/']">Home</a>
+    <a [routerLink]="['/']" [routerLinkActive]="['active']">Home</a>
     &nbsp;
-    <a [routerLink]="['/sapatos']">sapatos</a>
+<a [routerLink]="['/sapatos']" [routerLinkActive]="['active']">sapatos</a>
     &nbsp;
-    <a [routerLink]="['/videojuego']">videojuego</a>
+<a [routerLink]="['/videojuego']" [routerLinkActive]="['active']">videojuego</a>
     &nbsp;
-    <a [routerLink]="['/cursos']">cursos</a>
+<a [routerLink]="['/cursos']" [routerLinkActive]="['active']">cursos</a>
   </nav>
+  <hr>
 
   <!--<button (click)="ocultarVideoJuegos(false)" *ngIf="mostrar_videojuegos" >Ocultar</button>
   <button (click)="ocultarVideoJuegos(true)" *ngIf="!mostrar_videojuegos" >Mostrar</button>

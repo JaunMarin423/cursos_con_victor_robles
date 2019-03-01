@@ -1,5 +1,11 @@
-<input type="text" [(ngModel)]="userId" (keyup.enter)="cargaUsuario" />
 
+{{fecha | date:'dd/MM/yy'}}<br/>
+{{fecha | date:'fullDate' | uppercase }} <br/>
+
+{{'Hola Mundo usando PIPES' | lowercase }}
+
+<hr>
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargaUsuario" />
 <div *ngIf="!user">
   Cargando...
 </div>

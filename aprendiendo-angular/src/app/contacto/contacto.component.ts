@@ -8,7 +8,7 @@ import { ContactoUsuario } from '../models/contacto.usuario';
 })
 export class ContactoComponent implements OnInit {
   public usuarios: ContactoUsuario;
-  public = show_data;
+  
   
   constructor() { 
     this.usuarios = new ContactoUsuario ('', '', '', '');
@@ -18,7 +18,6 @@ export class ContactoComponent implements OnInit {
   }
 
   onSubmit(form){
-    this.show_data = this.usuarios;
     console.log(this.usuarios); 
   }
 

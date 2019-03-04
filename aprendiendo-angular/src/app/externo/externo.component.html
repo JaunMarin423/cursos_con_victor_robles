@@ -1,8 +1,43 @@
+<hr>
 
-{{fecha | date:'dd/MM/yy'}}<br/>
-{{fecha | date:'fullDate' | uppercase }} <br/>
+<h2>Crear Usuario</h2>
 
-{{'Hola Mundo usando PIPES' | lowercase }} <br/>
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)" action="">
+
+  <p>
+    <label for="name">Nombre</label>
+    <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" required>
+
+    <span *ngIf="name.touched && !name.value">
+      Nombre no es valido
+    </span>
+
+  </p>
+  <p>
+    <label for="job">Trabajo</label>
+    <input type="text" name="job" #job="ngModel" [(ngModel)]="new_user.job" required>
+    <span *ngIf="job.touched && !job.value">
+      Trabajo no es valido
+    </span>
+  </p>
+
+  <input type="submit" value="Guardar Usuario" [disabled]="!newUser.from.valid">
+
+</form>
+
+<div *ngIf="usuario_guardado">
+  <h2>El usuario se ha guardado correctamente</h2>
+  <h3>{{usuario_guardado.name}}</h3>
+  <h3>{{usuario_guardado.job}}</h3>
+</div>
+
+<hr>
+
+
+{{fecha | date:'dd/MM/yy'}}<br />
+{{fecha | date:'fullDate' | uppercase }} <br />
+
+{{'Hola Mundo usando PIPES' | lowercase }} <br />
 
 {{ 4 | calculadora: 4 }}
 

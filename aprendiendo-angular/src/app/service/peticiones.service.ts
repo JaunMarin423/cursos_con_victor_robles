@@ -8,12 +8,19 @@ import { of } from 'rxjs';
 export class PeticionesService{
     public url: string;
     constructor(
-        public _http: HttpClient
+        public http1: HttpClient
     ){
         this.url = "https://reqres.in/";
     }
     getUser(userId): Observable<any>{
-        return this._http.get(this.url + 'api/users/' + userId);
+        return this.http1.get(this.url + 'api/users/' + userId);
+    }
+
+    addUser(user): Observable<any>{
+        let params = JSON.stringify(user);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this.http1.post(this.url+'api/useres', params, {headers: headers});
     }
 }
 

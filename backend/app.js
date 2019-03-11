@@ -21,7 +21,10 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/test', (req, res) => {
+app.post('/test/:id', (req, res) => {
+    console.log(req.body.Nombre);
+    console.log(req.params.id);
+    
     res.status(200).send({
         message: "Hola mundo desde el api de nodeJS"
     });

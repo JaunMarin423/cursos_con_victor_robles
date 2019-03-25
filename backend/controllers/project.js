@@ -48,7 +48,9 @@ var controller = {
     getProject: function (req, res) {
         var projectId = req.params.id;
 
-        if(projectId ==null) return res.status(404).send({message: 'El proyecto noexiste.'});
+        if (projectId == null) return res.status(404).send({
+            message: "El proyecto noexiste."
+        });
 
         Project.findById(projectId, (err, project) => {
             if (err) return res.status(500).send({
@@ -62,7 +64,21 @@ var controller = {
                 project
             });
         });
-    }
+    },
+
+    getProjects: function(req, res){
+
+        Project.find({}).sort('year').exec((err, projects) => {
+
+            if (err) return res.status(500).send({message: "Error al devolver los datos"});
+
+            if (!projects) return res.status(404).send({message: "No hay proyectos para mostrar"});
+
+            return res.status(200).send({projects});
+
+        });
+
+    },
 };
 
 module.exports = controller;

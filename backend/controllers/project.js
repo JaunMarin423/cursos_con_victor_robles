@@ -1,6 +1,7 @@
 'use strict'
 
 var Project = require('../models/project');
+var fs = require('fs');
 
 var controller = {
 
@@ -14,7 +15,7 @@ var controller = {
             message: 'Soy el metodo test del controlador de project'
         });
     },
-//Guardar
+    //Guardar
     saveProject: function (req, res) {
         var project = new Project();
 
@@ -44,7 +45,7 @@ var controller = {
 
         });
     },
-//obtener 
+    //obtener 
     getProject: function (req, res) {
         var projectId = req.params.id;
 
@@ -65,30 +66,42 @@ var controller = {
             });
         });
     },
-        //Enlistar
-    getProjects: function(req, res){
+    //Enlistar
+    getProjects: function (req, res) {
 
         Project.find({}).sort('year').exec((err, projects) => {
 
-            if (err) return res.status(500).send({message: "Error al devolver los datos"});
+            if (err) return res.status(500).send({
+                message: "Error al devolver los datos"
+            });
 
-            if (!projects) return res.status(404).send({message: "No hay proyectos para mostrar"});
+            if (!projects) return res.status(404).send({
+                message: "No hay proyectos para mostrar"
+            });
 
-            return res.status(200).send({projects});
+            return res.status(200).send({
+                projects
+            });
 
         });
 
     },
     //Actualizar
 
-    updateProject: function(req, res){
+    updateProject: function (req, res) {
         var projectId = req.params.id;
         var update = req.body;
 
-        Project.findByIdAndUpdate(projectId, update, {new:true}, (err, projectUpdated) =>{
-            if(err) return res.status(500).send({message: "Error al actualizar."});
+        Project.findByIdAndUpdate(projectId, update, {
+            new: true
+        }, (err, projectUpdated) => {
+            if (err) return res.status(500).send({
+                message: "Error al actualizar."
+            });
 
-            if(!projectUpdated) return res.status(404).send({message:"No se ha podido actualizar"});
+            if (!projectUpdated) return res.status(404).send({
+                message: "No se ha podido actualizar"
+            });
 
             return res.status(200).send({
                 project: projectUpdated
@@ -98,19 +111,70 @@ var controller = {
 
     //Borrar
 
-    delateProject: function(req, res){
+    delateProject: function (req, res) {
         var projectId = req.params.id;
 
-        Project.findByIdAndRemove(projectId, (err, projectRemoved) =>{
-            if(err) return res.status(500).send({message: "Error al eliminar."});
+        Project.findByIdAndRemove(projectId, (err, projectRemoved) => {
+            if (err) return res.status(500).send({
+                message: "Error al eliminar."
+            });
 
-            if(!projectRemoved) return res.status(404).send({message:"No se puede eliminar el proyecto."});
+            if (!projectRemoved) return res.status(404).send({
+                message: "No se puede eliminar el proyecto."
+            });
 
             return res.status(200).send({
                 project: projectRemoved
             });
         });
     },
+
+    uploadImage: function (req, res) {
+        var projectId = req.params.id;
+        var fileName = 'Imagen no subida...';
+
+
+        if (req.files) {
+
+            var filePath = req.files.image.path;
+            var fileSplit = filePath.split('\\');
+            var fileName = fileSplit[1];
+            var extSplit = fileName.split('\.');
+            var fileExt = extSplit[1];
+
+            if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
+
+            Project.findByIdAndUpdate(projectId, {
+                image: fileName
+            }, {new: true}, (err, projectUpdated) => {
+
+                if(err) return res.status(200).send({
+                    message: "Error al enviar imagem. "
+                });
+
+                if(!projectUpdated) return res.status(404).send({
+                   message: "Proyecto no existe" 
+                });
+
+                return res.status(200).send({
+                    project: projectUpdated
+                });
+
+
+            });
+        }else{
+            fs.unlink(filePath, (err) =>{
+                return res.status(200).send({message: "La extencin no es valida"});
+            });
+        }
+        } else {
+            return res.status(200).send({
+                message: fileName
+            });
+        }
+
+    }
+
 };
 
 module.exports = controller;

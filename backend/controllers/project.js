@@ -14,7 +14,7 @@ var controller = {
             message: 'Soy el metodo test del controlador de project'
         });
     },
-
+//Guardar
     saveProject: function (req, res) {
         var project = new Project();
 
@@ -44,7 +44,7 @@ var controller = {
 
         });
     },
-
+//obtener 
     getProject: function (req, res) {
         var projectId = req.params.id;
 
@@ -65,7 +65,7 @@ var controller = {
             });
         });
     },
-
+        //Enlistar
     getProjects: function(req, res){
 
         Project.find({}).sort('year').exec((err, projects) => {
@@ -78,6 +78,22 @@ var controller = {
 
         });
 
+    },
+    //Actualizar
+
+    updateProject: function(req, res){
+        var projectId = req.params.id;
+        var update = req.body;
+
+        Project.findByIdAndUpdate(projectId, update, {new:true}, (err, projectUpdated) =>{
+            if(err) return res.status(500).send({message: "Error al actualizar."});
+
+            if(!projectUpdated) return res.status(404).send({message:"No se ha podido actualizar"});
+
+            return res.status(200).send({
+                project: projectUpdated
+            });
+        });
     },
 };
 

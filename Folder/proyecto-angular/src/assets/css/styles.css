@@ -83,3 +83,26 @@ header a:hover{
     color: black;
     transform:scale(1.50,1.50);
 }
+
+/* Contenedor principal */
+
+#content{
+    min-height: 500px;
+    width: 75%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 4px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    border-radius: 25px;
+    background: rgb(255, 255, 255, 0.7);
+    padding-top: 120px;
+}
+
+/* Pie de pagina*/
+
+footer{
+    width: 75%;
+    margin: 0px auto;
+    padding: 15px;
+    color: rgb(0, ,0 , 0, 0.5);
+}

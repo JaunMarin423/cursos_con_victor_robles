@@ -21,14 +21,11 @@ import { ErrorComponent } from './components/error/error.component';
     ContactComponent,
     ErrorComponent
   ],
-  imports: [
-    BrowserModule, routing
-  ],
-  providers: [
-    appRoutingProviders
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+  imports: [BrowserModule,
+    routing,
+    HttpClientModule,
+    FormsModule],
+  providers: [appRoutingProviders],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -180,7 +180,7 @@ var controller = {
         var file = req.params.image;
         var path_file = './uploads/'+file;
 
-        fs.exists(path_filec, (exists) =>{
+        fs.exists(path_file, (exists) =>{
             if(exists){
                 return res.sendFile(path.resolve(path_file));
             }else{

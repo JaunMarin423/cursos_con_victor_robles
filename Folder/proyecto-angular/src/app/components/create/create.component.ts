@@ -14,6 +14,7 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public project: Project;
+  public save_project;
   public status: string;
   public filesToUpload: Array<File>;
 
@@ -23,28 +24,37 @@ export class CreateComponent implements OnInit {
   ) {
     this.title = "Crear Proyecto";
     this.project = new Project('', '', '', '', 2019, '', '' );
-
    }
 
   ngOnInit() {
   }
-  //Guardar los datos
+
   onSubmit(form){
-    console.log(this.project);
+
+    //Guardar los datos
     this._projectService.saveProject(this.project).subscribe(
       response => {
-        if(response.project){
-          //Subir la imagen
-          this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
-          .then((result:any) =>{
-            this.status = "success";
-            console.log(result);
+        if (response.project) {
+
+          // Subir la imagen
+          if (this.filesToUpload) {
+            this._uploadService.makeFileRequest(Global.url + "upload-image/" + response.project._id, [], this.filesToUpload, 'image')
+              .then((result: any) => {
+
+                this.save_project = result.project;
+
+                this.status = 'success';
+                form.reset();
+              });
+          } else {
+            this.save_project = response.project;
+            this.status = 'success';
             form.reset();
-          });
-        }else{
+          }
+
+        } else {
           this.status = 'failed';
         }
-        console.log(response);
       },
       error => {
         console.log(<any>error);
@@ -52,8 +62,9 @@ export class CreateComponent implements OnInit {
     );
   }
 
-  fileChangeEvent(fileInput: any){
+  fileChangeEvent(fileInput: any) {
     this.filesToUpload = <Array<File>>fileInput.target.files;
   }
+
 
 }

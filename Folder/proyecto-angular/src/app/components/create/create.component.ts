@@ -29,22 +29,20 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(form){
-    console.log(this.project);
-    //Guardar los datos
+  onSubmit(form) {
+
+    // Guardar datos básicos
     this._projectService.saveProject(this.project).subscribe(
       response => {
-
-        console.log(response);
-        
         if (response.project) {
+
           // Subir la imagen
           if (this.filesToUpload) {
             this._uploadService.makeFileRequest(Global.url + "upload-image/" + response.project._id, [], this.filesToUpload, 'image')
               .then((result: any) => {
 
                 this.save_project = result.project;
-                
+
                 this.status = 'success';
                 form.reset();
               });

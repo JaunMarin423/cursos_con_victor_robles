@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { $ } from 'protractor';
+declare var $: any;
 
-declare var jQuery:any;
-declare var $:any;
 
 @Component({
   selector: 'app-contact',
@@ -10,21 +9,24 @@ declare var $:any;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  public widthSlider: number;
+  public anchuraToSlider: number;
+  public captions: boolean;
 
-  constructor() { }
+  constructor() {
+    this.captions = true;
+   }
 
   ngOnInit() {
-    $("#logo").click(function(e){
-      e.preventDefault();
-      $("header").css("background", "green").css("height", "50px");
-    });
 
-    $('.galeria').bxSlider({
-      mode: 'fade',
-      captions: false,
-      slideWidth: 800
-    });
+  }
+
+  cargarSlider(){
+    this.anchuraToSlider = this.widthSlider;
   }
   
+  resetearSlider(){
+    this.anchuraToSlider = null;
+  }
 
 }

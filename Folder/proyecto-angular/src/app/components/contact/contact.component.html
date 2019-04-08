@@ -1,8 +1,15 @@
 <div class="container">
+<p>Contacto</p>
 
-<div class="galeria">
-  <div><img src="assets/img/coffee1.jpg" title="Funky roots"></div>
-  <div><img src="assets/img/coffee2.jpg" title="The long and winding road"></div>
-  <div><img src="assets/img/coffee3.jpg" title="Happy trees"></div>
+Tamaño del Slider:
+<input type="number" [(ngModel)]="widthSlider" (keyup.enter)="cargarSlider()"/>
+<button (click)="cargarSlider()">Cargar slider</button>
+<button (click)="resetearSlider()">Resetar slider</button>
+
+<div *ngIf="anchuraToSlider">
+<slider [anchura]="anchuraToSlider"
+        [etiquetas]="captions"
+></slider>
 </div>
+
 </div>

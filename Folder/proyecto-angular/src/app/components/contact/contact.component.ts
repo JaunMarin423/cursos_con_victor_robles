@@ -18,6 +18,13 @@ export class ContactComponent implements OnInit {
       e.preventDefault();
       $("header").css("background", "green").css("height", "50px");
     });
+
+    $('.galeria').bxSlider({
+      mode: 'fade',
+      captions: false,
+      slideWidth: 800
+    });
   }
+  
 
 }

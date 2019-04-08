@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+//import { $ } from 'protractor';
+
+declare var jQuery:any;
+declare var $:any;
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +14,10 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $("#logo").click(function(e){
+      e.preventDefault();
+      $("header").css("background", "green").css("height", "50px");
+    });
   }
 
 }

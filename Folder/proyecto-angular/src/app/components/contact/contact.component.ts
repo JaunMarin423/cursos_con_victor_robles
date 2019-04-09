@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 //import { $ } from 'protractor';
 declare var $: any;
 
@@ -13,13 +13,17 @@ export class ContactComponent implements OnInit {
   public anchuraToSlider: any;
   public captions: boolean;
   public autor: any;
+  @ViewChild('textos') textos;
 
   constructor() {
     this.captions = true;
    }
 
   ngOnInit() {
-
+    console.log(this.textos.nativeElement.textContent);
+    
+    
+    var opcion_clasica = document.querySelector('#texto').innerHTML;
   }
 
   cargarSlider(){
